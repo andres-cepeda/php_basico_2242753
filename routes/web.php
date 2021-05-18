@@ -44,28 +44,32 @@ Route::get('paises', function()
         "Colombia" => [
             "capital" => "Bogotá D.C",
             "moneda" => "Peso",
-            "poblacion por millon de habitantes" => 51
+            "poblacion" => 51
         ],
         "Peru" => [
             "capital" => "Lima",
             "moneda" => "Sol",
-            "poblacion por millon de habitantes" => 33.19
+            "poblacion" => 33.19
         ],
         "Paraguay" => [
             "capital" => "Asuncion",
             "moneda" => "Guarani",
-            "poblacion por millon de habitantes" => 7
+            "poblacion" => 7
+        ],
+        "Argentina" => [
+            "capital" => "Buenos Aires",
+            "moneda" => "Peso argentino",
+            "poblacion" => 44.94
+        ],
+        "Brasil" => [
+            "capital" => "Brasilia",
+            "moneda" => "Real brasileño",
+            "poblacion" => 211
         ]
     ];
 
-    //recorrer el arreglo de paises
-    foreach($paises as $indice => $valor)
-    {
-        echo "<h1> $indice </h1>";
-        echo "<pre>";
-        print_r($valor["capital"]);
-        echo "<pre>";
-        echo "<hr />";
-    }
+    //Mostrar la vista de paises
+    //Llevamdo el arreglo
+    return view('paises')->with("naciones" , $paises);
 
 });
